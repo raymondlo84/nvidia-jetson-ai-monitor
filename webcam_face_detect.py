@@ -1,11 +1,11 @@
 import cv2
 import face_recognition
-cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
+from videocapturebufferless import VideoCaptureBufferless
+
+cap = VideoCaptureBufferless("http://localhost:8081")
 
 while True:
-    ret, rgb_frame = cap.read()
+    rgb_frame = cap.read()
     # Find all the faces and face enqcodings in the frame of video
     face_locations = face_recognition.face_locations(rgb_frame, model='cnn')
     for face_location in face_locations:
