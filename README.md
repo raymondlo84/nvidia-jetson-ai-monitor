@@ -1,6 +1,8 @@
 # nvidia-jetson-health-monitor
 An example development repository for using Nvidia Jetson Nano or Xavier as health monitor using computer vision. It show case the Open Pose, and Face Recognition, and Emotion Analysis (all GPU code) running in real-time on the Jetson Nano platform. 
 
+![Pose + Face](https://pasteboard.co/J52NLHz.gif)
+
 # Install
 
 You have to install the following applications and libraries to run the code.
