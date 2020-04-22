@@ -47,37 +47,36 @@ if __name__ == '__main__':
 
     image = cam.read()
     logger.info('cam image=%dx%d' % (image.shape[1], image.shape[0]))
+    blank_image = np.zeros(image.shape, dtype=np.uint8)
+
+    privacy = False
 
     while True:
-     #   while True:
-     #       start=time.time()
-     #       cam.grab()
-     #       end=time.time() - start
-     #       print("Grab Time "+str(end))
-     #       if (end > 0.003):
-     #           break
-
         image = cam.read()
 
-        ratio = 0.5
-        small_image=cv2.resize(image, (0,0), fx=ratio, fy=ratio) 
+        #ratio = 0.5
+        #small_image=cv2.resize(image, (0,0), fx=ratio, fy=ratio) 
 
         #process face
-        face_locations = face_recognition.face_locations(small_image, model='cnn')
+        #face_locations = face_recognition.face_locations(small_image, model='cnn')
 
+       
         #logger.debug('image process+')
         humans = e.inference(image, resize_to_default=(w > 0 and h > 0), upsample_size=args.resize_out_ratio)
-
+        
+        if privacy:
+            image = blank_image.copy()
         #logger.debug('postprocess+')
         image = TfPoseEstimator.draw_humans(image, humans, imgcopy=False)
         
         #logger.debug('postprocess face+')
-        for face_location in face_locations:
+        #for face_location in face_locations:
             # Print the location of each face in this image
-            top, right, bottom, left = face_location
+            #top, right, bottom, left = face_location
             # Draw a label with a name below the face
-            cv2.rectangle(image, (int(left/ratio), int(top/ratio)), (int(right/ratio), int(bottom/ratio)), (0, 255, 0))
+            #cv2.rectangle(image, (int(left/ratio), int(top/ratio)), (int(right/ratio), int(bottom/ratio)), (0, 255, 0))
 
+ 
         #logger.debug('show+')
         cv2.putText(image,
                     "FPS: %f" % (1.0 / (time.time() - fps_time)),
@@ -86,8 +85,12 @@ if __name__ == '__main__':
 
         cv2.imshow('TF Pose & Face Demo', image)
         fps_time = time.time()
-        if cv2.waitKey(1) == 27:
+        key = cv2.waitKey(1)
+        if key == 27:
             break
+        elif key == 80: #p key
+            privacy = not privacy
+        
         #logger.debug('finished+')
     cam.release()
     cv2.destroyAllWindows()
