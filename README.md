@@ -4,16 +4,26 @@ An example development repository for using Nvidia Jetson Nano or Xavier as heal
 # Install
 
 You have to install the following applications and libraries to run the code.
-Motion (IP Camera) - https://motion-project.github.io/index.html]
-Tensorflow & TF Pose - https://github.com/karaage0703/jetson-nano-tools
-Face Recognition - https://github.com/ageitgey/face_recognition 
-Emotion Analysis - https://github.com/abhijeet3922/FaceEmotion_ID (for the model)
-OpenCV - https://github.com/karaage0703/jetson-nano-tools
+
+- Motion (IP Camera) - https://motion-project.github.io/index.html]
+
+- Tensorflow & TF Pose - https://github.com/karaage0703/jetson-nano-tools
+
+- Face Recognition - https://github.com/ageitgey/face_recognition 
+
+- Emotion Analysis - https://github.com/abhijeet3922/FaceEmotion_ID (for the model)
+
+- OpenCV - https://github.com/karaage0703/jetson-nano-tools
 
 # References
-https://medium.com/@ageitgey/build-a-hardware-based-face-recognition-system-for-150-with-the-nvidia-jetson-nano-and-python-a25cb8c891fd
-https://pythonspot.com/flask-and-great-looking-charts-using-chart-js/
-https://karaage.hatenadiary.jp/
-https://github.com/karaage0703/jetson-nano-tools
-https://toramamma.blogspot.com/2019/04/jetson-nano-tensorflowopenpose.html
-https://github.com/ageitgey/face_recognition
+- https://medium.com/@ageitgey/build-a-hardware-based-face-recognition-system-for-150-with-the-nvidia-jetson-nano-and-python-a25cb8c891fd
+
+- https://pythonspot.com/flask-and-great-looking-charts-using-chart-js/
+
+- https://karaage.hatenadiary.jp/
+
+- https://github.com/karaage0703/jetson-nano-tools
+
+- https://toramamma.blogspot.com/2019/04/jetson-nano-tensorflowopenpose.html
+
+- https://github.com/ageitgey/face_recognition
