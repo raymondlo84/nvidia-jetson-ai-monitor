@@ -63,7 +63,7 @@ def find_face_emotion(image, image_draw):
         cv2.rectangle(image_draw, (int(left/ratio), int(top/ratio)), (int(right/ratio), int(bottom/ratio)), (0, 255, 0))
         cv2.putText(image_draw,
                     "Happy Counter: "+str(happy),
-                    (image_draw.shape[0]-50, 30),  cv2.FONT_HERSHEY_SIMPLEX, 0.5,
+                    (image_draw.shape[1]-170, 10),  cv2.FONT_HERSHEY_SIMPLEX, 0.5,
                     (0, 255, 0), 2)
 
 
