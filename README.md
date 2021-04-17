@@ -11,7 +11,7 @@ https://towardsdatascience.com/using-cv-and-ml-to-monitor-activity-while-working
 
 You have to install the following applications and libraries to run the code.
 
-- Motion (IP Camera) - https://motion-project.github.io/index.html]
+- Motion (IP Camera) - https://motion-project.github.io/index.html
 
 - Tensorflow & TF Pose - https://github.com/karaage0703/jetson-nano-tools
 
